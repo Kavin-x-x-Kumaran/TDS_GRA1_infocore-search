@@ -21,10 +21,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # --- Configuration ---
-# Switching to BAAI/bge-small-en-v1.5 which is currently active on free tier
-# and using the direct /models/ endpoint which is more stable.
+# The old 'api-inference' domain is deprecated. We must use the new Router.
 HF_MODEL_ID = "BAAI/bge-small-en-v1.5"
-HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL_ID}"
+HF_API_URL = f"https://router.huggingface.co/hf-inference/models/{HF_MODEL_ID}"
+
+# ... rest of your code stays the same ...
 
 # Get the token from Environment Variable
 hf_token = os.getenv("HF_TOKEN")
