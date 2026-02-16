@@ -21,7 +21,7 @@ app.add_middleware(
 # to ensure it routes to the correct provider.
 client = OpenAI(
     api_key=os.getenv("AIPIPE_KEY"), 
-    base_url="https://api.aipipe.org/v1" 
+    base_url="https://api.aipipe.org/openai/v1" 
 )
 
 class SimilarityRequest(BaseModel):
